@@ -182,3 +182,57 @@ def is_Prime(n):
             return False
     return True
 
+
+## Run-length Encoding algorithm --> for string compression
+##--> Encoding single value and count to encode sequences of repeated values but not storing them in
+## for image and video compression
+#      DNA  / Network Transmission / compress data
+
+
+
+def RunLengthEncode(line):
+    if not line:
+        return ""
+    result = []
+    current_char = line[0]
+    current_count = 1
+    for char in line[1:]:
+        if char == current_char:
+            current_count += 1
+        else:
+            result.append(str(current_count) + current_char)
+            current_char = char
+            current_count = 1
+    result.append(str(current_count + current_char))
+
+    return "".join(result)
+
+## whats up dding up
+def Add(num):
+    a = range(num + 1)
+    total = sum(a)
+    return total
+
+print Add(int(input()))
+
+def TimeConvert(n):
+    hours = n / 60
+    min = n % 60
+    return "%d:%d" % (hours,min)
+print TimeConvert(int(input()))
+
+
+
+
+## vowel count's bro !!
+vowels = ["a","e","i","o","u"]
+vowellist = []
+def Vowelcnt(str):
+    for in str:
+        if i in vowels:
+            vowellist.append(i)
+    vowelnum = len(vowellist)
+    return vowelnum
+print VowelCount(input())
+
+
