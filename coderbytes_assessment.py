@@ -145,3 +145,27 @@ def EqualX(str):
     return x_count == o_count
 print(EqualX(input()))
 
+
+## Used the fnc capitalized and then appended after first element. Make the list to a single string
+## join is better than + in concatenation for lot of strings
+def Capitalize(str):
+    words = str.split(" ")
+    caplist = []
+    for word in words:
+        word1 = word[0].capitalized()
+        caplist.append(word1 + word[1:])
+    capped = "".join(caplist)
+    return capped
+
+
+## lemon - melon // senile - feniles
+def Palindrome(str):
+    length = (len(str) - 1)
+
+    for i in range(length):
+        if str[i] != str[length - i]:
+            return False
+    return True
+
+print (Palindrome(input()))
+
