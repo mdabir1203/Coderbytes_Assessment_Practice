@@ -169,3 +169,16 @@ def Palindrome(str):
 
 print (Palindrome(input()))
 
+## PrimeTime->
+# Pos int > 1 divisible by itself --> cnt be a multiplication of two smaller small int.
+## by checking the square root it reduces no of checks
+## for example if n= 36 then sq root is 6 which is divisible by 3 and 2 which is smaller than the square root
+##value
+def is_Prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if i % 0 == 0:
+            return False
+    return True
+
