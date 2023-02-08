@@ -6,7 +6,7 @@ def ReverseString(rev_str):
         rev_str += char
     return(rev_str)
 
-print ReverseString(raw_input())
+print ReverseString(input())
 
 
 ## Factorial --> recursive -> Easier + each save solve be used for future
@@ -15,7 +15,7 @@ def Factorial(num):
         return 1
     else
         return Factorial(n-1) * n
-    print Factorial(raw_input())
+    print Factorial(input()) ## raw_input() is no more in python3
 
 
 #**
@@ -61,3 +61,87 @@ def LetterChanges(inp_str):
         else:
             encode_str += letter
     return encode_str
+
+##
+#2 True condition-->
+#a) Checking distance between a and b characters
+
+def ABCheck(str):
+    for i in range((len(str) - 4)):
+        if str[i] == "a" and str[i + 4] == "b":
+            return True
+        elif str[i] == "b" and str[i + 4] == "a":
+            return True
+        else:
+            i += 1
+        return False
+
+
+##
+# string parameter being passed and return the string with the letters
+# #in alphabetical order (ie. hello becomes ehllo). Assume numbers and
+# #punctuation symbols will not be included in the string."
+# Removes any punctuation marks (. , ;)
+
+punct = list()
+def AlphabetSoup(str):
+    for line in str:
+        if line in punct:
+            str = str.replace(line, "")
+        str.sort()
+        str = "".join(str)
+    return str
+
+print AlphabetSoup(input())
+
+
+##  Find Arithmetic / Geometric --> diff between each number consistent
+
+def ArGeo(ar):
+    arr = ar.split(",")
+    if (int(arr[1] - int(arr[0]) == (int(arr[len(arr) - 1])) - (int(arr[len(arr) -2])))):
+        return "Arithmetic"
+    elif (int(arr[1] - int(arr[0]) == (int(arr[len(arr) - 1])) - (int(arr[len(arr) -2])))):
+        return "Geometric"
+    else:
+        return -1
+
+##eturn the string true if num2 is greater
+#than num1, otherwise return the string false. If the parameter values
+#are equal to each other then return the string -1."
+
+def CheckNums(n1,n2):
+    n1 = int(n1)
+    n2 = int(n2)
+    if n2 == n1:
+        return -1
+    else:
+        return (n2 > n1)
+
+print (CheckNums(int(input()), int(input())))
+
+
+##Ex0h(str)
+#string true if there is an equal number of x's
+#and o's, otherwise return the string false. Only these two letters will be
+#entered in the string, no punctuation or numbers.
+
+def EqualX(str):
+    x_swap = 0
+    o_swap = 0
+    for i in str:
+        if i == "x":
+            x_swap += 1
+        elif i == "o":
+            o_swap += 1
+    return x_swap == o_swap
+print (EqualX(input()))
+
+##Optimized for larger inputs:
+
+def EqualX(str):
+    x_count = str.count("x")
+    o_count = str.count("o")
+    return x_count == o_count
+print(EqualX(input()))
+
