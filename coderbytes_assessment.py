@@ -96,12 +96,14 @@ print AlphabetSoup(input())
 
 
 ##  Find Arithmetic / Geometric --> diff between each number consistent
-
+#by dividing the second element by the first element and
+#checking if it is equal to the ratio of the last element divided by the second to last element.
+#here int(arr[len(arr) - 1] -> gives the last element of array
 def ArGeo(ar):
     arr = ar.split(",")
     if (int(arr[1] - int(arr[0]) == (int(arr[len(arr) - 1])) - (int(arr[len(arr) -2])))):
         return "Arithmetic"
-    elif (int(arr[1] - int(arr[0]) == (int(arr[len(arr) - 1])) - (int(arr[len(arr) -2])))):
+    elif (int(arr[1] / int(arr[0]) == (int(arr[len(arr) - 1])) / (int(arr[len(arr) -2])))):
         return "Geometric"
     else:
         return -1
